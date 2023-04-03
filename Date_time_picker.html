@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Time Picker</title>
+    <style>
+        .datetimepicker {
+  align-items: center;
+}
+
+.datetimepicker input {
+  padding: 10px;
+  margin-right: 15px;
+  border: 2px outset;
+  border-radius: 7px;
+  font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="datetimepicker">
+  <input type="date" id="datepicker" placeholder="Select Date">
+  <input type="time" id="timepicker" placeholder="Select Time">
+</div>
+
+
+<Script>
+    const datepicker = document.getElementById("datepicker");
+const timepicker = document.getElementById("timepicker");
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, "0");
+const dd = String(today.getDate()).padStart(2, "0");
+datepicker.value = `${yyyy}-${mm}-${dd}`;
+const now = new Date();
+const hh = String(now.getHours()).padStart(2, "0");
+const min = String(now.getMinutes()).padStart(2, "0");
+const sec = String(now.getSeconds()).padStart(2, "0");
+timepicker.value = `${hh}:${min}:${sec}`;
+
+</Script>
+
+</body>
+</html>
